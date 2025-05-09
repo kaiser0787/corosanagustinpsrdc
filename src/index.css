@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Blanco Hueso */
+    --foreground: 220 13% 20%; /* Gris Oscuro Azulado */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 20%;
+    --primary: 220 60% 50%; /* Azul Mariano */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 90% 70%; /* Dorado */
+    --secondary-foreground: 220 13% 20%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 220 60% 50%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 60% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 210 40% 98%;
+    --card: 220 13% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 220 70% 60%;
+    --primary-foreground: 220 13% 20%;
+    --secondary: 45 80% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 220 70% 60%;
+  }
+  
+  body[data-theme="adviento"], .theme-adviento {
+    --primary: 270 50% 50%; /* Morado Litúrgico */
+  }
+  body[data-theme="navidad"], .theme-navidad {
+    --primary: 45 90% 60%; /* Dorado Intenso */
+  }
+  body[data-theme="cuaresma"], .theme-cuaresma {
+    --primary: 270 40% 45%; /* Morado Cuaresma */
+  }
+  body[data-theme="pascua"], .theme-pascua {
+    --primary: 45 100% 50%; /* Dorado Brillante / Blanco */
+    --primary-foreground: 220 13% 20%;
+  }
+  body[data-theme="ordinario"], .theme-ordinario {
+     --primary: 120 40% 45%; /* Verde Litúrgico */
+  }
+  body[data-theme="solemnidades"], .theme-solemnidades {
+    --primary: 0 80% 55%; /* Rojo Litúrgico */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+.song-content-display {
+  white-space: pre-wrap;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
